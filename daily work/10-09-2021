@@ -1,0 +1,51 @@
+FirstProject [Admin App]:
+=========================
+- init -> Python interperter to be considered as a python file
+- asgi -> Asynchronous GateWay Interface -> Web deployment
+- wsgi -> Web Socket GateWay Interfaces  -> Web deployment
+- settings -> All Configuration can be done here [App,database,mail,messages]
+- urls -> you need to pass the urls here to access it 
+
+Manage.py[services]:
+     - start project
+     - runserver
+     - startup
+     - shell
+     - makemigrations
+     - migrate
+     - createuser
+
+To break server: ctrl +c
+=========================
+UserApp Creation:
+================
+      => manage.py statapp "appname" 
+      => python manage.py startapp "appname"
+      => manage.py startapp FirstApp
+
+UserApp Files:
+==============
+     - init => Python interperter to be considered as a python file
+     - admin => Database tables and fields => view => List
+     - apps  => app configurations
+     - models => Database => Fields => Datatype => length
+     - tests  => unit testing
+     - views  => logic are included
+
+First Step to run our own app:
+=============================
+- settings.py
+     => INSTALLED_APPs =[
+     ''.
+     '',
+     'appname',
+     ]
+  - own url
+      => urls.py
+      urlpatterns = [
+      path('admin/',admin.site.urls),
+      path('',)
+      ]
+    path:
+    =====
+       path('urlname/',modulename.functionnamemname="userdef")                 
