@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Details</title>
+</head>
+<body>
+	<form action="{% url 'register' %}" method="POST">
+		{% csrf_token %}
+		<input type="text" name="fname" placeholder="Enter First Name" ><br>
+		<input type="text" name="lname" placeholder="Enter Last Name" ><br>
+		<input type="text" name="email" placeholder="Enter Username" ><br>
+		<input type="text" name="phno" placeholder="Enter phone number" ><br>
+		<h3>gender</h3>
+		<input type="radio" id="male" name="gender" value="male">
+		<label for="male">Male</label><br>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label><br>
+		<input type="radio" id="other" name="gender" value="other">
+		<label for="other">Other</label><br>
+		<label>Address</label><br>
+		<input type="textarea" name="address" placeholder="Enter address"><br>
+		<h2>Languages</h2>
+		<input type="checkbox" id="c" name="Languages" value="c">
+		<label for="c">c language</label><br>
+		<input type="checkbox" id="python" name="Languages" value="python">
+		<label for="python">python language</label><br>
+		<input type="checkbox" id="java" name="Languages" value="java">
+		<label for="java">java language</label><br>
+		<input type="submit" name="submit" value="Submit"></br>
+	</form>
+</body>
+</html>
