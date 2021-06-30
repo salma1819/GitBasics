@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="jumbotron mt-4">
+		<h3>Weclome to ContactPage</h3>
+	</div>
+</div>
+<style>
+.container {
+position: relative;
+	text-align: center;
+	color: white;
+}
+.text-block {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background-color: white;
+	color: black;
+	padding-left: 30px;
+	padding-right: 30px; 
+}	
+</style>
+<h3>Contact Details</h3>
+<div class="container">
+	<img src="{% static 'contactimage.jpg' %}" width="1300" height="400">
+	<div class="text-block">
+	<h4>Contact us</h4>	
+</div>		
+{% endblock %}

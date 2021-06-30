@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="jumbotron mt-4">
+		<h3>Weclome to AboutPage</h3>
+	</div>
+</div>
+<style>
+.container {
+position: relative;
+	text-align: center;
+	color: white;
+}
+.text-block {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background-color: white;
+	color: black;
+	padding-left: 30px;
+	padding-right: 30px; 
+}	
+</style>
+<h3>Chinese Non-veg Items</h3>
+<div class="container">
+	<img src="{% static 'recipesimage.jpg' %}" class="mx-auto d-block" width="1000" height="300">
+</div>	
+{% endblock %}
