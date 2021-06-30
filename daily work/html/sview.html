@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Single User View</title>
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+   <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="card col-md-6 mx-auto">
+			<div class="card-body">
+				<h3>Your Id is: {{y.id}}</h3>
+				<h3>Your Name is: {{y.name}}</h3>
+				<h3>Your Email Id is: {{y.email}}</h3>
+			</div>
+		</div>
+		<a href="{% url 'dt' %}" class="btn btn-outline-success my-2">Back</a>		
+	</div>
+
+</body>
+</html>

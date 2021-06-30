@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Details</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+   <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script> 
+ </head>  
+<style>
+     .container{
+          margin-top: 35px;
+          margin-bottom: 35px;
+          padding-bottom: 20%;
+          padding-right: 20%;
+          padding-left: 20%;
+     }
+     body{
+          font-style: all;
+          font-size: 15px;
+          background-color: rgb(2,0,36);
+     }
+</style>    
+<body>
+<div class="container mt-4">
+     <div class="row text-center text-light">   
+	<h2>Registration Form</h2>
+     <br><br>
+     <div class="container mt-4">
+          <div class="row text-center text-light">   
+     <div class="row"></div>
+     <div class="col bg-warning mx-2 p-3 border rounded">
+     	<form>
+     		<div class="form-group">
+     			<label for="fname">First Name</label>
+     			<input type="text" name="fname" placeholder="First Name" ><br>
+     		</div>
+               <div class="row"></div>
+     <div class=" col md-1"></div>
+     		<div class="form-group">
+     			<label for="lname">Last Name</label>
+     			<input type="text" name="lname" placeholder="Last Name" ><br>
+     		</div>
+               <div class="row"></div>
+     <div class=" col md-1"></div>	
+     		<div class="form-group">
+     			<label for="email">Email Id</label>
+     			<input type="text" name="email" placeholder="Email" ><br>
+     		</div>
+               <div class="row"></div>
+     <div class=" col md-1"></div>
+     		<div class="form-group">
+     			<label for="phoneno">PhoneNo</label>
+     			<input type="text" name="phoneno" placeholder="phno" ><br>
+     		</div>
+               <div class="row"></div>
+     <div class=" col md-1"></div>
+     		<div class="form-group">
+     			<label for="gender">Gender</label>
+     			<div>
+     				<label for="male" class="radio-inline">
+     					<input type="radio" name="gender" id="male">Male
+     				</label>
+     				<label for="female" class="radio-inline">
+     					<input type="radio" name="gender" id="female">Female
+     				</label>
+     				<label for="others" class="radio-inline">
+     					<input type="radio" name="gender" id="others">Others
+     				</label><br><br>
+     				<label for="address">Address</label>
+     				<input type="textarea" name="address" id="Address"><br>
+     			</div>
+                    <div class="row"></div>
+                    <div class=" col md-1"></div>
+                    <input type="checkbox" id="c" name="Languages" value="c">
+                    <label for="c">c language</label><br>
+                    <input type="checkbox" id="python" name="Languages" value="python">
+                    <label for="python">python language</label><br>
+                    <input type="checkbox" id="java" name="Languages" value="java">
+                    <label for="java">java language</label><br>
+                    <br><br>
+                    <input type="submit" name="Register" class="btn btn-outline-success col-md-10">	
+               </form>	
+          </div> 
+</body>
+</html
