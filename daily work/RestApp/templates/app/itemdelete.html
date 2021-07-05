@@ -1,16 +1,16 @@
 {% extends 'app/base.html' %}
-{% block title %}Restaurant Delete{% endblock %}
+{% block title %}Item Delete{% endblock %}
 {% block content %}
 <div class="container mt-4">
 	<div class="card col-md-6 mx-auto shadow-lg">
 		<div class="card-body">
-			<h3>Restaurant Delete</h3>
+			<h3>Item Delete</h3>
 			<form method="post">
 				{% csrf_token %}
 				<h4>Are you sure you want to delete{{y.Rname}} ?</h4>
 				<div class="row">
 					<div class="col">
-						<a href="{% url 'rstl' %}" class="btn btn-outline-success form-control my-2">Cancel</a>
+						<a href="{% url 'itl' %}" class="btn btn-outline-success form-control my-2">Cancel</a>
 					</div>
 					<div class="col">
 						<input type="submit" Value="Delete" class="btn btn-outline-danger form-control my-2">

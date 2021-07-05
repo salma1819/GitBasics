@@ -3,30 +3,20 @@
 {% block title %}Contact{% endblock %}
 {% block content %}
 <div class="container">
-	<div class="jumbotron mt-4">
+	<div class="jumbotron mt-4 shadow-lg bg-success">
 		<h3>Weclome to ContactPage</h3>
 	</div>
 </div>
-<style>
-.container {
-position: relative;
-	text-align: center;
-	color: white;
-}
-.text-block {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-	background-color: white;
-	color: black;
-	padding-left: 30px;
-	padding-right: 30px; 
-}	
-</style>
 <h3>Contact Details</h3>
 <div class="container">
-	<img src="{% static 'contactimage.jpg' %}" width="1300" height="400">
-	<div class="text-block">
-	<h4>Contact us</h4>	
+	<img src ="{% static 'contactimage.jpg' %}" height="250px" width="100%">
+	<div col="col">	
+			<table class="table table-borderless">
+				<tr>
+					<th>Restaurant ContactDetails</th>
+					<th>PhoneNo</th>
+					<th>Order Items</th>
+				</tr>
+	
 </div>		
 {% endblock %}

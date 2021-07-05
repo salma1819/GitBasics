@@ -3,34 +3,38 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 <div class="container">
-	<div class="jumbotron mt-4">
+	<div class="jumbotron mt-4 shadow-lg bg-warning">
 		<h3>Weclome to HomePage</h3>
 	</div>
 </div>
-<style>
-.container {
-	position: relative;
-	text-align: center;
-	color: white;
-}
-.text-block {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-	background-color: black;
-	color: white;
-	padding-left: 20px;
-	padding-right: 20px; 
-}
-</style>
 <h2>Restaurant Items:</h2>
 <div class="container">
-	<img src="{% static 'coverimage.jpg' %}" class="mx-auto d-block" width="1000" height="300">
-	<div class="text-block">
-	<h4>All Veg Items</h4>
-	<h4>All Non-Veg Items</h4>
-	<h4>Snakes Items</h4>
-	<h4>Cool drinks</h4>
-	<h4>Sweets</h4>
+	<h3>Carousel</h3>
 </div>
+<div class="col-md mx-2">
+	<h3>Items List</h3>
+</div>
+</div>
+		<div class="row mx-2">
+			{% for x in c %}
+			<div class="card col-md-4">
+				<div class="card shadow-lg my-2">
+					<img src="{{x.rsimg.url}}" class="card-img-top" height="120px">
+					<div class="card-body">
+						<tr>
+							<td><span class="badge badge-info" style="font-size:25px">{{x.Rname}}</span><span style="font-size: 20px;float:right">{{x.address}}</span></td>
+						</tr>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h6>Items: {{x.Nitems}}</h6>
+						</div>
+						<div class="col">
+							<h6>Timings: {{x.timings}}</h6>
+						</div>
+					</div>
+			 	</div>
+            </div>
+			{% endfor %}
+		</div>	
 {% endblock %}

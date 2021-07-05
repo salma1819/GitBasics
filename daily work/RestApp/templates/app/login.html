@@ -1,33 +1,24 @@
 {% extends 'app/base.html' %}
-{% load static %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<div class="container bg-warning">
-	<div class="jumbotron mt-4 shadow-lg">
-		<h3>Weclome to LoginPage</h3>
-	</div>
-<form>
-		<div class="form-group">
-			<a class="navbar-brand" href="#">
-			<img src="{% static 'images.jpg' %}" class="mx-auto d-block" width="1100" height="400">
-			<div class="container-fluid bg-secondary my-2">
-			</div>
-			<label form="Name" class="text-primary">Name:</label>
-			<input type="text" class="from-control bg-light" name="Name" placeholder="Enter your Name" ><br>
+<div class="container mt-4">
+	<div class="card col-md-5 mx-auto shadow-lg">
+		<div class="card-body">
+			<h3>Login</h3>
+			<form method="post">
+				{% csrf_token %}
+				<input type="text" name="username" class="form-control my-2" placeholder="Enter Usename">
+				<input type="password" name="password" class="form-control my-2" placeholder="Enter password">
+				<div class="row">
+					<div class="col">
+						<a href="{% url 'reg' %}" class="btn btn-outline-secondary">New User?</a>
+					</div>
+					<div class="col">
+						<input type="submit" value="Login" class="btn btn-outline-success form-control my-2">
+					</div>
+				</div>
+			</form>
 		</div>
-		<div class="form-group">
-			<label from="email" class="text-primary">Email Id:</label>
-			<input type="text" class="from-control bg-light" name="email" placeholder="Enter Users email id" ><br>
-		</div>
-		<div class="form-group">
-			<label from="password" class="text-primary">Password:</label>
-			<input type="text" class="from-control bg-light" name="password" placeholder="Enter your Password" ><br>	
 	</div>
-	<div>
-		<input type="Submit" name="Submit" class="btn btn-outline-success col-sm my-2" value="Login">
-	</div>
-</form>
-	</div>
-		</div>
 </div>
 {% endblock %}

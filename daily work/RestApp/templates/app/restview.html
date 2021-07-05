@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Restaurant View{% endblock %}
+{% block content %}
+<div class="container mt-4">
+	<div class="card col-md-6 mx-auto shadow-lg">
+		<div class="card-body">
+			<h3>Restaurant View</h3>
+			<div class="row">
+				<div class="col-md h =170">
+					<img src ="{{z.rsimg.url}}" height="250px" width="100%">
+				</div>
+				<div col="col">	
+					<table class="table table-borderless">
+				<tr>		
+					<th>Restaurant Name</th>
+					<th>{{z.Rname}}</th>
+				</tr>
+				<tr>
+					<th>Items Available</th>
+					<th>{{z.Nitems}}</th>
+				</tr>	
+				<tr>
+					<th>Timings</th>
+					<th>{{z.timings}}</th>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<th>{{z.address}}</th>
+				</tr>
+			</table>
+			<a href="{% url 'rstl' %}" class="btn btn-block btn-outline-info my-2 ">Back to List</a>
+		</div>
+	</div>
+</div>					
+{% endblock %}				

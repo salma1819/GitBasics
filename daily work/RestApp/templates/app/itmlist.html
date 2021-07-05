@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+{% block title %}Items List{% endblock %}
+{% block content %}
+<div class="container mt-4">
+	<div class="row">
+		<div class="card col col-md-4 mx-2 shadow-lg">
+			<div class="card-body">
+			<h3 class="bg-info text-center text-light border rounded">Add Items</h3>
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{% for n in r %}
+				<div>{{n}}</div>
+				{% endfor %}
+				<div class="row">
+					<div class="col">
+						<input type="reset" Value="Reset" class="btn btn-outline-info form-control my-2">
+					</div>
+					<div class="col">
+						<input type="submit" Value="Create Item" class="btn btn-outline-success form-control my-2">
+					</div>
+				</div>
+			</form>	
+	    </div>
+	</div>   
+    <div class="card col col-md mx-2">
+    	<div class="card-body">
+    		<h3 class="bg-warning text-light text-center shadow-lg border rounded">List Of Items</h3>
+    		<table class="table table-borderless table-hover">
+    			<tr class="bg-dark text-light">
+    				<th>Sno</th>
+    				<th>Item Name</th>
+    				<th>Category</th>
+    				<th>Price</th>
+    				<th>Availability</th>
+    				<th>Actions</th>
+    			</tr>
+    			{% for u in s %}
+    			<tr>
+    				<td>{{forloop.counter}}</td>
+    				<td>{{u.iname}}</td>
+    				<td>
+    					{% if u.icategory == 'VG' %}
+    					<span class="badge badge-success">Vegetarian</span>
+    					{% else %}
+    					<span class="badge badge-danger">Non-Vegetarian</span>
+    					{% endif %}
+    				</td>
+    				<td>{{u.price}}</td>
+    				<td>
+    					{% if u.itavailability == 'AV' %}
+    					<span class="badge badge-success">Available</span>
+    					{% else %}
+    					<span class="badge badge-danger">Not Available</span>
+    					{% endif %}
+    				</td>
+    				<td><a href="{% url 'itp' k.id %}" class="btn btn-outline-info mx-1">Update</a><a href="{% url 'itd' k.id %}" class="btn btn-outline-danger">Delete</a></td>
+    			</tr>
+    			{% endfor %}
+    		</table>
+    	</div>
+	</div>
+</div>
+{% endblock %}
