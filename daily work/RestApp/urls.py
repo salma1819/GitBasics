@@ -18,4 +18,11 @@ urlpatterns=[
 	path('iup/<int:s>/',views.itup,name="itp"),
 	path('idl/,<int:p>/',views.itdl,name="itd"),
 	path('itviw/<int:b>/',views.itvw,name="ivw"),
+	path('roltype/',views.rolereq,name="rlrq"),
+	path('gvper/',views.gveperm,name="gvpm"),
+	path('gvup/<int:t>/',views.gvupd,name="gvup"),
+	path('pfle/',views.pfle,name="pf"),
+	path('feedback/',views.feedback,name="fd"),
+	path('pfupd/',views.pfleupd,name="pfup"),
+	path('chge/',views.changepwd,name="chpd"),
 ]

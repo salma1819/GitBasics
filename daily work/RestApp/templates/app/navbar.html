@@ -1,3 +1,4 @@
+
 {% load static %}
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	<a class="navbar-brand" href="{% url 'hm' %}">Restaurant	
@@ -19,7 +20,7 @@
 	    <li class="nav-item">
 	  	<a class="nav-link" href="{% url 'reg' %}">Registration</a>
 	  </li>
-	  {% else %}
+	  {% elif user.role == 2 %}
 	  <li class="nav-item">
 	    <a class="nav-link" href="{% url 'hm' %}">Home</a>
 	  </li>
@@ -29,6 +30,30 @@
 	  <li class="nav-item">
 	    <a class="nav-link" href="{% url 'rstl' %}">Restaurant List</a>
 	  </li>
+	  {% elif user.is_superuser %}
+	  <li class="nav-item">
+	    <a class="nav-link" href="{% url 'hm' %}">Home</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="{% url 'gvpm' %}">Premissions</a>
+	  </li>
+	  {% elif user.role == 3 %}
+	  <li class="nav-item">
+	    <a class="nav-link" href="{% url 'hm' %}">Home</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Order</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="{% url 'fd' %}">Feedback</a>
+	  </li>
+	  {% else %}
+	  <li class="nav-item">
+	    <a class="nav-link" href="{% url 'hm' %}">Home</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="{% url 'rlrq' %}">Role Request</a>
+	  </li>
 	  {% endif %}
 	</ul>
 	<ul class="navbar-nav ml-auto" style="margin-right: 120px;">
@@ -37,10 +62,15 @@
 			<a class="nav-link" href="{% url 'lg' %}">Login</a>
 		</li>
 		{% else %}
-		<li class="nav-item">
-			<a class="nav-link" href="{% url 'lgo' %}">LogOut</a>
-		</li>
+		<div class="dropdown">
+			<li class="nav-link dropdown-toggle" data-toggle="dropdown"><img src="{{user.uimg.url}}" class="rounded-cricle" height="25px" width="25px">{{request.user.username}}</li>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="{% url 'pf' %}">Profile</a>
+				<a class="dropdown-item" href="{% url 'chpd' %}">Change Password</a>
+				<a class="dropdown-item" href="{% url 'lgo' %}">Logout</a>
+			</div>
+		</div>
+		{% endif %}
 	</ul>
-	{% endif %}
 </div>		
 </nav>	

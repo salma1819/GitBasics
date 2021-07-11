@@ -123,6 +123,8 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'RestApp/static/images/')
+#MEDIA_URL ='/Itemimages/'
+#MEDIA_ROOT = os.path.join(BASE_DIR,'RestApp/static/Itemimages/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -131,3 +133,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'lg'
 LOGIN_REDIRECT_URL = 'hm'
+
+
+AUTH_USER_MODEL = 'RestApp.User'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '19kq1a0523@pace.ac.in'
+EMAIL_HOST_PASSWORD = 'pace1234'
